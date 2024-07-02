@@ -1,0 +1,7 @@
+- hosts: localhost
+  vars:
+    name: ansbile
+  roles:
+    - pre-installation-checking
+    - delivering-files 
+  

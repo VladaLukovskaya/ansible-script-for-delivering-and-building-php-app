@@ -1,0 +1,12 @@
+- name: Check whether Docker is installed
+  ansible.builtin.shell: docker --version
+  register: docker_valid
+  ignore_errors: yes
+
+- name: Show Docker version or error 
+  ansible.builtin.debug:
+    msg: "{{ docker_valid.stdout }}"
+
+- name: Install Docker if not installed
+  ansible.builtin.shell: curl https://get.docker.com | bash
+  when: docker_valid.failed == true
