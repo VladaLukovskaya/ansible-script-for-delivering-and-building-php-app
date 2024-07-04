@@ -2,6 +2,6 @@
   vars:
     name: ansbile
   roles:
-    - pre-installation-checking
+    - pre-installation checking
     - delivering-files 
   

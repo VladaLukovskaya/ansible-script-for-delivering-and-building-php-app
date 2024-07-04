@@ -1,7 +1,0 @@
-- name: Copy file to the remote server adding root permission  # requires being run as with sudo
-  ansible.builtin.copy:
-    src: ../files/
-    dest: /home/livada/app/
-    owner: root
-    group: root
-    mode: '744'
