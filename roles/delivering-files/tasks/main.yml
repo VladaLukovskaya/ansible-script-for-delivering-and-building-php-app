@@ -5,3 +5,12 @@
     owner: root
     group: root
     mode: '0744'
+    
+- name: Check the distro name and version of the remote server
+  ansible.builtin.shell: cat /etc/*rel*
+  register: distro
+  ignore_errors: yes
+
+- name: Show the distro name and version 
+  ansible.builtin.debug:
+    msg: "{{ distro.stdout }}"

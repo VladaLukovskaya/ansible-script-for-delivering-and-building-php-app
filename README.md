@@ -6,9 +6,7 @@
 
 ## Ansible playbook
 What steps should be described in the ansible playbook: 
-1. Check whether the remote server (RS) has Docker installed. If not, to install it. 
-At first, I connect to
- Check whether docker-compose installed? Turn them all on via the systemd module?
+1. Check whether the remote server (RS) has everything requires installed. If not, install it.
 1. Deliver the Dockerfile and docker-compose.yml to the RS.
 2. Build the app.
 3. Pass variables to the nginx.conf template. 
@@ -35,3 +33,8 @@ or
 ansible-galaxy install -r requirements.yml
 or
 ansible-galaxy install -r requirements.yml --roles-path roles/git
+
+Run playbook script (inside the main dir):
+sudo ansible-playbook -i <path_to_inventory> playbook.yml -bK
+or (optional and excessive)
+sudo ansible-playbook -i <path_to_inventory> playbook.yml --user=<user_name> --private-key=<path_to_private_ssh_key> -bK
