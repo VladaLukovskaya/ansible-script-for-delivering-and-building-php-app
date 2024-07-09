@@ -1,0 +1,20 @@
+- name: Copy index.php to the remote server  
+  ansible.builtin.copy:
+    src: index.php
+    dest: "{{ app_dir }}src/"
+  notify: 
+    - "Restart docker compose"
+
+- name: Copy templates to the remote server  
+  ansible.builtin.template:
+    src: "{{ item }}"
+    dest: "{{ app_dir }}{{ item | replace('.j2', '') }}"
+  with_items:
+    - docker-compose.yml.j2
+    - default.conf.j2
+  notify: 
+    - "Restart docker compose"
+
+- name: Run docker compose
+  community.docker.docker_compose_v2:
+    project_src: "{{ app_dir }}"

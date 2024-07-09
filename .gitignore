@@ -1,3 +1,4 @@
 roles/git/*
 .local/
+.vscode
 setup-ansible.log

@@ -1,0 +1,6 @@
+mysql_db_name: app_db
+mysql_user: mysql_user
+mysql_pass: mysql_pass
+mysql_root_pass: mysql_root_pass
+app_dir: /opt/app/
+php_container_name: php-fpm

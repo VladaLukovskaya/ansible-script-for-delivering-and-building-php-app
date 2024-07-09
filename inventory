@@ -1,5 +1,5 @@
 [all]
-server ansible_host=10.10.103.154
+server ansible_host=192.168.88.229
 [all:vars]
 ansible_connection=ssh  
-ansible_user=livada
+ansible_user=ansible

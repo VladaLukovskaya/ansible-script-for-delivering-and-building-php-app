@@ -1,7 +1,9 @@
 - hosts: all
   vars:
-    name: ansbile
+    docker_users:
+      - ansible
   roles:
+    - pip
     - docker
-    - delivering-files 
+    - delivering-files-and-running-app
   
