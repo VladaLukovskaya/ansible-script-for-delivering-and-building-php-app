@@ -1,2 +1,0 @@
-- name: Run docker compose
-  ansible.builtin.shell: docker compose up

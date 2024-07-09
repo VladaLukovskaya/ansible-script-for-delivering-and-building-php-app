@@ -1,3 +1,5 @@
+# Simple Ansible playbook for app (with nginx, php, mysql containers)
+
 ## Ansible playbook
 What this project does: 
 1. Checks whether the remote server (RS) has everything required installed. If not, install it. Make it with help from the geerlingguy's repo.
@@ -5,6 +7,13 @@ What this project does:
 3. Passes variables to the nginx.conf template. 
 4. Adds condition of restarting nginx if the nginx.conf was changed. 
 5. Runs the app. 
+
+### Running the app
+To run the app, use the following command (inside the main dir):
+```bash
+ansible-playbook -i <path_to_inventory> playbook.yml -bK
+```
+then type the password of the remote server's ansible user
 
 
 ### Misc remarks and instructions
@@ -26,9 +35,3 @@ To export and use tasks from git (requires ansible config and inventory files):
 ```bash
 ansible-galaxy role install -r requirements.yml --force
 ```
-
-Run playbook script (inside the main dir):
-```bash
-ansible-playbook -i <path_to_inventory> playbook.yml -bK
-```
-then type the password of the remote server's ansible user
