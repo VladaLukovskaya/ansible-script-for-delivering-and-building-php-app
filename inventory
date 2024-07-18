@@ -1,5 +1,5 @@
 [all]
-server ansible_host=192.168.88.229
+server ansible_host=127.0.0.1
 [all:vars]
 ansible_connection=ssh  
 ansible_user=ansible
